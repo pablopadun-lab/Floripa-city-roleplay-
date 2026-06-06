@@ -1,0 +1,335 @@
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Floripa City Roleplay - Calculadora Mecânica</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+body{
+    background:linear-gradient(135deg,#0f172a,#1e1b4b,#111827);
+    color:white;
+    min-height:100vh;
+    padding:30px;
+}
+
+.container{
+    max-width:1400px;
+    margin:auto;
+}
+
+.topo{
+    text-align:center;
+    margin-bottom:30px;
+}
+
+.topo h1{
+    font-size:3rem;
+    color:#c084fc;
+}
+
+.topo p{
+    color:#cbd5e1;
+}
+
+.dashboard{
+    display:grid;
+    grid-template-columns:2fr 1fr;
+    gap:25px;
+}
+
+.card{
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.08);
+    backdrop-filter:blur(15px);
+    border-radius:20px;
+    padding:25px;
+}
+
+.item{
+    margin-bottom:18px;
+}
+
+label{
+    display:block;
+    margin-bottom:5px;
+    font-weight:bold;
+}
+
+select{
+    width:100%;
+    padding:12px;
+    border:none;
+    border-radius:10px;
+    background:#1f2937;
+    color:white;
+}
+
+.resumo h2{
+    margin-bottom:15px;
+    color:#c084fc;
+}
+
+.lista{
+    list-style:none;
+    margin-bottom:20px;
+}
+
+.lista li{
+    padding:10px;
+    margin-bottom:8px;
+    background:rgba(255,255,255,.05);
+    border-radius:8px;
+}
+
+.total{
+    text-align:center;
+    padding:25px;
+    background:#4c1d95;
+    border-radius:15px;
+    margin-top:20px;
+}
+
+.total span{
+    font-size:2rem;
+    font-weight:bold;
+}
+
+.botoes{
+    display:flex;
+    gap:10px;
+    margin-top:20px;
+}
+
+button{
+    flex:1;
+    padding:15px;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+.btn-calcular{
+    background:#9333ea;
+    color:white;
+}
+
+.btn-copiar{
+    background:#22c55e;
+    color:white;
+}
+
+.footer{
+    text-align:center;
+    margin-top:25px;
+    color:#94a3b8;
+}
+
+@media(max-width:900px){
+    .dashboard{
+        grid-template-columns:1fr;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="topo">
+    <h1>🚗 FLORIPA CITY ROLEPLAY</h1>
+    <p>Calculadora Mecânica Oficial</p>
+</div>
+
+<div class="dashboard">
+
+<div class="card">
+
+<div class="item">
+<label>Turbo</label>
+<select class="valor">
+<option value="0">Nenhum</option>
+<option value="50000">Nível 1 - 50K</option>
+</select>
+</div>
+
+<div class="item">
+<label>Transmissão</label>
+<select class="valor">
+<option value="0">Nenhum</option>
+<option value="60000">Nível 1 - 60K</option>
+<option value="80000">Nível 2 - 80K</option>
+<option value="100000">Nível 3 - 100K</option>
+<option value="100000">Nível 4 - 100K</option>
+</select>
+</div>
+
+<div class="item">
+<label>Freio</label>
+<select class="valor">
+<option value="0">Nenhum</option>
+<option value="20000">Nível 1 - 20K</option>
+<option value="60000">Nível 2 - 60K</option>
+<option value="80000">Nível 3 - 80K</option>
+<option value="80000">Nível 4 - 80K</option>
+</select>
+</div>
+
+<div class="item">
+<label>Motor</label>
+<select class="valor">
+<option value="0">Nenhum</option>
+<option value="20000">Nível 1 - 20K</option>
+<option value="40000">Nível 2 - 40K</option>
+<option value="80000">Nível 3 - 80K</option>
+<option value="80000">Nível 4 - 80K</option>
+</select>
+</div>
+
+<div class="item">
+<label>Suspensão</label>
+<select class="valor">
+<option value="0">Nenhum</option>
+<option value="20000">Nível 1 - 20K</option>
+<option value="40000">Nível 2 - 40K</option>
+<option value="80000">Nível 3 - 80K</option>
+<option value="100000">Nível 4 - 100K</option>
+</select>
+</div>
+
+<div class="item">
+<label>Blindagem</label>
+<select class="valor">
+<option value="0">Nenhum</option>
+<option value="600000">Blindagem - 600K</option>
+</select>
+</div>
+
+<div class="item">
+<label>Pneu Blindado</label>
+<select class="valor">
+<option value="0">Nenhum</option>
+<option value="900000">Pneu Blindado - 900K</option>
+</select>
+</div>
+
+<div class="item">
+<label>Full Tuning</label>
+<select class="valor">
+<option value="0">Nenhum</option>
+<option value="350000">Full Tuning - 350K</option>
+</select>
+</div>
+
+<div class="item">
+<label>Neon / Xenon</label>
+<select class="valor">
+<option value="0">Nenhum</option>
+<option value="25000">25K</option>
+</select>
+</div>
+
+<div class="item">
+<label>Cor Neon / Xenon</label>
+<select class="valor">
+<option value="0">Nenhum</option>
+<option value="15000">15K</option>
+</select>
+</div>
+
+<div class="botoes">
+<button class="btn-calcular" onclick="calcular()">CALCULAR</button>
+<button class="btn-copiar" onclick="copiar()">COPIAR</button>
+</div>
+
+</div>
+
+<div class="card resumo">
+
+<h2>📋 Orçamento</h2>
+
+<ul id="listaItens" class="lista"></ul>
+
+<div class="total">
+TOTAL<br>
+<span id="resultado">R$ 0</span>
+</div>
+
+</div>
+
+</div>
+
+<div class="footer">
+Floripa City Roleplay © 2026
+</div>
+
+</div>
+
+<script>
+
+function calcular(){
+
+let total = 0;
+let lista = "";
+
+document.querySelectorAll(".valor").forEach(select=>{
+
+const valor = Number(select.value);
+
+if(valor > 0){
+
+const nome =
+select.parentElement.querySelector("label").innerText;
+
+lista += `
+<li>
+${nome}
+<br>
+R$ ${valor.toLocaleString('pt-BR')}
+</li>`;
+}
+
+total += valor;
+
+});
+
+document.getElementById("listaItens").innerHTML =
+lista || "<li>Nenhum item selecionado</li>";
+
+document.getElementById("resultado").innerHTML =
+"R$ " + total.toLocaleString('pt-BR');
+
+}
+
+function copiar(){
+
+const texto =
+document.getElementById("resultado").innerText;
+
+navigator.clipboard.writeText(texto);
+
+alert("Valor copiado!");
+}
+
+document.querySelectorAll('.valor').forEach(select=>{
+select.addEventListener('change',calcular);
+});
+
+calcular();
+
+</script>
+
+</body>
+</html>
+```
